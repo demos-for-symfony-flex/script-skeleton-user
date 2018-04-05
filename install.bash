@@ -27,6 +27,7 @@ composer require mailer # symfony/swiftmailer-bundle # in symfony/website-skelet
 (cd $origin/etap/fos_user && tar --exclude-vcs --create --file - .) | tar --extract --verbose --file -
 composer require friendsofsymfony/user-bundle
 composer require web-server # symfony/web-server-bundle
+composer require browser-kit # symfony/browser-kit
 composer require simple-phpunit # symfony/phpunit-bridge
 
 # cp $origin/src/Entity/*.php src/Entity --verbose # May be done earlier.
