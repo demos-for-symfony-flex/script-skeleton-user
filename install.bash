@@ -26,8 +26,8 @@ composer require mailer # symfony/swiftmailer-bundle # in symfony/website-skelet
 # cp $origin/config/routes/*.yaml config/routes --verbose
 (cd $origin/etap/fos_user && tar --exclude-vcs --create --file - .) | tar --extract --verbose --file -
 composer require friendsofsymfony/user-bundle
-composer require web-server # symfony/web-server-bundle
-composer require test-pack # symfony/test-pack
+composer require --dev web-server # symfony/web-server-bundle
+composer require --dev test-pack # symfony/test-pack
 
 # cp $origin/src/Entity/*.php src/Entity --verbose # May be done earlier.
 bin/console doctrine:database:create
