@@ -3,11 +3,12 @@
 set -ev # https://docs.travis-ci.com/user/customizing-the-build/
 
 origin=$(pwd)
-composer create-project --no-install symfony/website-skeleton $CREATE_PROJECT_DIRECTORY
+$package='skeleton'
+composer create-project --no-install symfony/$package $CREATE_PROJECT_DIRECTORY
 if [[ -v $CREATE_PROJECT_DIRECTORY ]]; then
   cd $CREATE_PROJECT_DIRECTORY
 else
-  cd website-skeleton
+  cd $package
 fi
 (cd $origin/etap/install && tar --exclude-vcs --create --file - .) | tar --extract --verbose --file -
 composer config bin-dir bin
