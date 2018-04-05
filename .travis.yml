@@ -19,6 +19,7 @@ php:
 env:
   global:
   - PATH=$TRAVIS_BUILD_DIR/website-skeleton/bin:$(composer config bin-dir --global --absolute):$PATH
+  - PACKAGE='skeleton'
   # - CREATE_PROJECT_DIRECTORY=/dev/shm/website-skeleton # ramdisk
   # - CREATE_PROJECT_DIRECTORY=website-skeleton
 matrix:
@@ -43,7 +44,7 @@ install:
 - if [[ -v $CREATE_PROJECT_DIRECTORY ]]; then
     cd $CREATE_PROJECT_DIRECTORY;
   else
-    cd website-skeleton;
+    cd $PACKAGE;
   fi
 # - composer global require symfony/flex
 - composer global require sensiolabs/security-checker
