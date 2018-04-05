@@ -26,6 +26,7 @@ composer require mailer # symfony/swiftmailer-bundle # in symfony/website-skelet
 # cp $origin/config/routes/*.yaml config/routes --verbose
 (cd $origin/etap/fos_user && tar --exclude-vcs --create --file - .) | tar --extract --verbose --file -
 composer require friendsofsymfony/user-bundle
+composer require simple-phpunit # symfony/phpunit-bridge
 
 # cp $origin/src/Entity/*.php src/Entity --verbose # May be done earlier.
 bin/console doctrine:database:create
@@ -37,7 +38,5 @@ bin/console doctrine:migrations:migrate --no-interaction --quiet
 # bin/console doctrine:fixtures:load --append
 bin/console fos:user:create superadmin superadmin@example.com superadmin --super-admin
 bin/console fos:user:create user user@example.com user
-
-# cp --recursive $origin/tests . --verbose
 
 bin/console assets:install --symlink
