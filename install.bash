@@ -10,17 +10,18 @@ if [[ -v $CREATE_PROJECT_DIRECTORY ]]; then
 else
   cd $package
 fi
+pwd
 (cd $origin/etap/install && tar --exclude-vcs --create --file - .) | tar --extract --verbose --file -
 composer config bin-dir bin
 # cp $origin/.env.dist . # Needs apparently to be done before install.
 
 composer install
-# composer require symfony/yaml # in symfony/website-skeleton
-# composer require symfony/console # in symfony/website-skeleton
-# composer require symfony/twig-bundle # in symfony/website-skeleton
-# composer require sensio/framework-extra-bundle # in symfony/website-skeleton
-# composer require symfony/orm-pack # in symfony/website-skeleton
-# composer require symfony/swiftmailer-bundle # in symfony/website-skeleton
+# composer require symfony/yaml # in symfony/skeleton
+# composer require symfony/console # in symfony/skeleton
+composer require twig # symfony/twig-bundle # in symfony/website-skeleton
+composer require annotations # sensio/framework-extra-bundle # in symfony/website-skeleton
+composer require orm-pack # symfony/orm-pack # in symfony/website-skeleton
+composer require mailer # symfony/swiftmailer-bundle # in symfony/website-skeleton
 # composer require symfony/security-csrf
 # cp $origin/config/packages/*.yaml config/packages --verbose
 # cp $origin/config/routes/*.yaml config/routes --verbose
