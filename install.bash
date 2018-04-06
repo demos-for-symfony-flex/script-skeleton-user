@@ -37,7 +37,5 @@ bin/console doctrine:migrations:migrate --no-interaction --quiet
 # composer require doctrine/doctrine-fixtures-bundle --dev
 # cp $origin/src/DataFixtures/AppFixtures.php src/DataFixtures
 # bin/console doctrine:fixtures:load --append
-bin/console fos:user:create superadmin superadmin@example.com superadmin --super-admin
-bin/console fos:user:create user user@example.com user
 
 bin/console assets:install --symlink
