@@ -19,7 +19,7 @@ php:
 env:
   global:
   - PATH=$TRAVIS_BUILD_DIR/website-skeleton/bin:$(composer config bin-dir --global --absolute):$PATH
-  - PACKAGE='skeleton'
+  # - PACKAGE='skeleton'
   # - CREATE_PROJECT_DIRECTORY=/dev/shm/website-skeleton # ramdisk
   # - CREATE_PROJECT_DIRECTORY=website-skeleton
 matrix:
@@ -42,6 +42,7 @@ before_install:
   fi
 
 install:
+- . install.env
 - bash install.bash
 # - cd $CREATE_PROJECT_DIRECTORY
 - if [[ -v $CREATE_PROJECT_DIRECTORY ]]; then
