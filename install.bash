@@ -6,8 +6,8 @@ set -ev # https://docs.travis-ci.com/user/customizing-the-build/
 if [[ ! -v $PACKAGE ]]; then
   echo 'env PACKAGE=skeleton <this command>'
   echo 'or'
-  echo 'nv PACKAGE=website-skeleton <this command>'
-  die
+  echo 'env PACKAGE=website-skeleton <this command>'
+  exit 1
 fi
 
 origin=$(pwd)
