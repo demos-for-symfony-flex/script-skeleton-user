@@ -42,7 +42,7 @@ before_install:
   fi
 
 install:
-- . install.env
+- . install.env ; printenv PACKAGE
 - bash install.bash
 # - cd $CREATE_PROJECT_DIRECTORY
 - if [[ -v $CREATE_PROJECT_DIRECTORY ]]; then
