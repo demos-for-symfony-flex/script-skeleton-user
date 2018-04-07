@@ -50,7 +50,7 @@ install:
   else
     cd $PACKAGE;
   fi
-- sh create_test_users.sh # This tests db connection.
+- sh ../create_test_users.sh # This tests db connection.
 # - composer global require symfony/flex
 - composer global require sensiolabs/security-checker
 
