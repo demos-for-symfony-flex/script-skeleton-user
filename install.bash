@@ -4,9 +4,9 @@ set -ev # https://docs.travis-ci.com/user/customizing-the-build/
 
 . install.env || true
 if [[ ! -v $PACKAGE ]]; then
-  echo env PACKAGE=skeleton <this command>
-  echo or
-  echo nv PACKAGE=website-skeleton <this command>
+  echo 'env PACKAGE=skeleton <this command>'
+  echo 'or'
+  echo 'nv PACKAGE=website-skeleton <this command>'
   die
 fi
 
