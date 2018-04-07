@@ -4,7 +4,7 @@ set -ev # https://docs.travis-ci.com/user/customizing-the-build/
 
 . install.env || true
 printenv PACKAGE
-if ! [[ -v $PACKAGE ]]; then
+if ! [[ -v PACKAGE ]]; then
   echo 'env PACKAGE=skeleton <this command>'
   echo 'or'
   echo 'env PACKAGE=website-skeleton <this command>'
@@ -13,7 +13,7 @@ fi
 
 origin=$(pwd)
 composer create-project --no-install symfony/$PACKAGE $CREATE_PROJECT_DIRECTORY
-if [[ -v $CREATE_PROJECT_DIRECTORY ]]; then
+if [[ -v CREATE_PROJECT_DIRECTORY ]]; then
   cd $CREATE_PROJECT_DIRECTORY
 else
   cd $PACKAGE
