@@ -75,7 +75,7 @@ after_script:
 - $GOPATH/bin/ccat .env.dist
 - $GOPATH/bin/ccat phpunit.xml.dist
 - ls --color bin
-- ls --almost-all --recursive --color var
+- ls --almost-all --color var
 - ls --color src
 - ls --color src/Controller
 - ls --color src/Entity
