@@ -108,8 +108,15 @@ after_script:
 - composer exec --verbose -- console server:start &
 - printf 'HEAD /admin/dashboard HTTP/1.1\r\n\r\n' | socat - TCP4:localhost:8000,forever >/dev/null # Waiting for server to connect.
 - elinks http://localhost:8000/login -dump-color-mode 4 -dump
-# - elinks http://localhost:8000/index.php/admin -dump-color-mode 4 -dump
-
+- elinks http://localhost:8000/logout -dump-color-mode 4 -dump
+- elinks http://localhost:8000/profile -dump-color-mode 4 -dump
+- elinks http://localhost:8000/profile/edit -dump-color-mode 4 -dump
+- elinks http://localhost:8000/register/ -dump-color-mode 4 -dump
+- elinks http://localhost:8000/register/check-email -dump-color-mode 4 -dump
+- elinks http://localhost:8000/register/confirmed -dump-color-mode 4 -dump
+- elinks http://localhost:8000/resetting/request -dump-color-mode 4 -dump
+- elinks http://localhost:8000/resetting/check-email -dump-color-mode 4 -dump
+- elinks http://localhost:8000/profile/change-password -dump-color-mode 4 -dump
 
 - composer show --latest
 - $GOPATH/bin/ccat composer.json
