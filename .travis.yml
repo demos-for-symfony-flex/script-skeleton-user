@@ -21,7 +21,7 @@ env:
   - PATH=$TRAVIS_BUILD_DIR/website-skeleton/bin:$(composer config bin-dir --global --absolute):$PATH
   # - PACKAGE='skeleton'
   # - CREATE_PROJECT_DIRECTORY=/dev/shm/website-skeleton # ramdisk
-  # - CREATE_PROJECT_DIRECTORY=website-skeleton
+  # - CREATE_PROJECT_DIRECTORY=skeleton
 matrix:
   fast_finish: true
   allow_failures:
@@ -50,6 +50,7 @@ install:
   else
     cd $PACKAGE;
   fi
+- sh create_test_users.sh # This tests db connection.
 # - composer global require symfony/flex
 - composer global require sensiolabs/security-checker
 
