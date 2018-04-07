@@ -4,7 +4,7 @@ set -ev # https://docs.travis-ci.com/user/customizing-the-build/
 
 . install.env || true
 printenv PACKAGE
-if [[ ! -v $PACKAGE ]]; then
+if ! [[ -v $PACKAGE ]]; then
   echo 'env PACKAGE=skeleton <this command>'
   echo 'or'
   echo 'env PACKAGE=website-skeleton <this command>'
