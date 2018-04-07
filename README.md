@@ -1,4 +1,4 @@
-# testing-skeleton-user
+# script-skeleton-user
 
 ## TODO
 * Link to Travis
