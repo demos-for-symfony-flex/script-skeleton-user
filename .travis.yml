@@ -30,22 +30,24 @@ matrix:
 before_install:
 - go get -u github.com/jingweno/ccat
 # Disabling Xdebug - Debugger and Profiler Tool for PHP
-- php -r "print_r(get_loaded_extensions(TRUE));";
+- |
+  php -r "print_r(get_loaded_extensions(TRUE));"
   if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
-    cat ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini;
-    install --directory ~/.phpenv/versions/$(phpenv version-name)/etc/on-demand;
-    mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ~/.phpenv/versions/$(phpenv version-name)/etc/on-demand;
-    php -r "print_r(get_loaded_extensions(TRUE));";
+    cat ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
+    install --directory ~/.phpenv/versions/$(phpenv version-name)/etc/on-demand
+    mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ~/.phpenv/versions/$(phpenv version-name)/etc/on-demand
+    php -r "print_r(get_loaded_extensions(TRUE));"
   fi
 
 install:
 - . install.env ; printenv PACKAGE
 - bash install.bash
 # - cd $CREATE_PROJECT_DIRECTORY
-- if [[ -v $CREATE_PROJECT_DIRECTORY ]]; then
-    cd $CREATE_PROJECT_DIRECTORY;
+- |
+  if [[ -v $CREATE_PROJECT_DIRECTORY ]]; then
+    cd $CREATE_PROJECT_DIRECTORY
   else
-    cd $PACKAGE;
+    cd $PACKAGE
   fi
 - sh ../create_test_users.sh # This tests db connection.
 # - composer global require symfony/flex
