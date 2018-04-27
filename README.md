@@ -1,7 +1,8 @@
 # script-skeleton-user
 
+[![Build Status](https://travis-ci.org/symfony-flex-demo/script-skeleton-user.svg?branch=master)](https://travis-ci.org/symfony-flex-demo/script-skeleton-user)
+
 ## TODO
-* Link to Travis
 * Fixture test users
 * Ensure db schema is written to db. DONE
 * Testing.
