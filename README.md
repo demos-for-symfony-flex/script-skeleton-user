@@ -21,3 +21,10 @@ There are tow version of this document, one difference is in security.yaml
 ## Testing
 * *[Tests (Best Practices)](https://symfony.com/doc/master/best_practices/tests.html)*
 * *[Testing](https://symfony.com/doc/master/testing.html)*
+
+## Bugs
+### Referencing controllers with a single colon is deprecated since Symfony 4.1
+* Seems to be caused by friendsofsymfony/user-bundle 2.1.2 and Symfony 4.1
+* Switched to friendsofsymfony/user-bundle:2.1.x-dev in install.bash, waiting for a corrected stable version.
+* Not even yet corrected in dev.
+* The problem may come from a @FOSUserBundle/Resources/config/routing/\*.xml file referenced from etap/fos_user/config/routes/fos_user.yaml
