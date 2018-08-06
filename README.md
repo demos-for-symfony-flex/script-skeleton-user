@@ -28,3 +28,4 @@ There are tow version of this document, one difference is in security.yaml
 * Switched to friendsofsymfony/user-bundle:2.1.x-dev in install.bash, waiting for a corrected stable version.
 * Not even yet corrected in dev.
 * The problem may come from a @FOSUserBundle/Resources/config/routing/\*.xml file referenced from etap/fos_user/config/routes/fos_user.yaml
+* Deprecation notices disabled in php >= 7.1 because of https://github.com/FriendsOfSymfony/FOSUserBundle/pull/2806
