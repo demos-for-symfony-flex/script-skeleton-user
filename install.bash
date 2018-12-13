@@ -33,8 +33,8 @@ composer require mailer # symfony/swiftmailer-bundle # in symfony/website-skelet
 # composer require symfony/security-csrf
 # cp $origin/config/packages/*.yaml config/packages --verbose
 # cp $origin/config/routes/*.yaml config/routes --verbose
-(cd $origin/etap/fos_user && tar --exclude-vcs --create --file - .) | tar --extract --verbose --file -
 composer require translation # symfony/translation for user-bundle DEBUG
+(cd $origin/etap/fos_user && tar --exclude-vcs --create --file - .) | tar --extract --verbose --file -
 composer require friendsofsymfony/user-bundle # :2.1.x-dev@dev
 composer require --dev web-server # symfony/web-server-bundle
 composer require --dev test-pack # symfony/test-pack
